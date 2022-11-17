@@ -1,0 +1,34 @@
+{
+  "id": "magroader-elantra",
+  "title": "MagRoader's Elantra Mod",
+  "description": "Helper stuff for the Elantra world",
+  "authors": [
+    {
+      "name": "MagRoader",
+      "flags": {}
+    }
+  ],
+  "version": "v0.0.1",
+  "url": "https://github.com/magroader/magroader-magroader-elantra",
+  "manifest": "https://github.com/magroader/magroader-magroader-elantra/releases/latest/download/module.json",
+  "download": "https://github.com/magroader/magroader-magroader-elantra/releases/download/v0.0.1/module.zip",
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "2.0.3",
+          "verified": "2.0.3"
+        }
+      }
+    ]
+  }
+}
