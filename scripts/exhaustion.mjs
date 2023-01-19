@@ -1,3 +1,5 @@
+import * as globals from './globals.mjs';
+
 export class ExhaustionUpdater {
   init() {
     let rollHooks = [
@@ -18,5 +20,13 @@ export class ExhaustionUpdater {
         return true;
       });
     }
+
+    libWrapper.register(globals.moduleName, 'dnd5e.entities.Actor5e.prototype._prepareSpellcasting', function (wrapped, ...args) {
+      const result = wrapped(...args);
+      if (this.system.attributes.exhaustion > 0) {
+        this.system.attributes.spelldc = this.system.attributes.spelldc - this.system.attributes.exhaustion;
+      }
+      return result;
+    }, 'WRAPPER');
   }
 }
