@@ -21,7 +21,7 @@ export class ExhaustionUpdater {
       });
     }
 
-    libWrapper.register(globals.moduleName, 'dnd5e.entities.Actor5e.prototype._prepareSpellcasting', function (wrapped, ...args) {
+    libWrapper.register(globals.moduleName, 'dnd5e.documents.Actor5e.prototype._prepareSpellcasting', function (wrapped, ...args) {
       const result = wrapped(...args);
       if (this.system.attributes.exhaustion > 0) {
         this.system.attributes.spelldc = this.system.attributes.spelldc - this.system.attributes.exhaustion;
